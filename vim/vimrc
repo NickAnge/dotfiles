@@ -1,22 +1,22 @@
 syntax on
 set showmode
-
+filetype plugin indent on
 execute pathogen#infect()
 
 ""vim-plugin
 call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
-
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'aonemd/kuroi.vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'vim-scripts/AutoComplPop'
 call plug#end()
-
-
-
-syntax on
-filetype plugin indent on
 
 "line numbers
 set number
-
 
 "" Tab 4 spaces
 set tabstop=4
@@ -26,6 +26,9 @@ nnoremap <Leader>f :NERDTreeToggle<Enter>
 ""Open NerTree on the current file
 nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
+
+"" colors
+colorscheme kuroi
+set background=dark
+let g:airline_theme="wombat"
 

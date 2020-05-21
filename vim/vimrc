@@ -1,10 +1,11 @@
 syntax on
+
 set showmode
 filetype plugin indent on
 execute pathogen#infect()
 
 ""vim-plugin
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged/')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
@@ -12,7 +13,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'aonemd/kuroi.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'vim-scripts/AutoComplPop'
+Plug 'neoclide/coc.nvim', {'branch':'release'}
 call plug#end()
 
 "line numbers
@@ -21,14 +22,38 @@ set number
 "" Tab 4 spaces
 set tabstop=4
 
+
+
+""Coc setup
+
+""Give more space for dispalying messages
+set cmdheight=2
+
+""always show signcolumns
+
 ""Open NerdTree using shortcut
 nnoremap <Leader>f :NERDTreeToggle<Enter>
+
 ""Open NerTree on the current file
 nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 
-
+map <C-p> :Files<CR>
 "" colors
 colorscheme kuroi
+
+
 set background=dark
+
 let g:airline_theme="wombat"
+
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-implementation)
+
+nnoremap <C-p> :Files<CR>
+
+set title
+
 

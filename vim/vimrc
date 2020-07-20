@@ -13,7 +13,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'aonemd/kuroi.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'neoclide/coc.nvim', {'branch':'release'}
 call plug#end()
 
 "line numbers
@@ -52,7 +51,6 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-implementation)
 
-nnoremap <C-p> :Files<CR>
 
 set title
 

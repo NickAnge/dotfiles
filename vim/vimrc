@@ -1,6 +1,6 @@
 syntax on
-
 set showmode
+
 filetype plugin indent on
 execute pathogen#infect()
 
@@ -8,9 +8,12 @@ execute pathogen#infect()
 call plug#begin('~/.config/nvim/plugged/')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'w0rp/ale'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'aonemd/kuroi.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
@@ -22,36 +25,51 @@ set number
 set tabstop=4
 
 
-
-""Coc setup
-
 ""Give more space for dispalying messages
 set cmdheight=2
-
+set expandtab
+set shiftwidth=4
+set shiftround
 ""always show signcolumns
 
 ""Open NerdTree using shortcut
 nnoremap <Leader>f :NERDTreeToggle<Enter>
+inoremap <S-Tab> <C-V><Tab>
 
 ""Open NerTree on the current file
 nnoremap <silent> <Leader>v :NERDTreeFind<CR>
-
 map <C-p> :Files<CR>
+
 "" colors
 colorscheme kuroi
 
+""Indent
+set autoindent
+set copyindent
 
 set background=dark
 
 let g:airline_theme="wombat"
 
+""Map tab for autocompletion
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
+inoremap <silent><expr> <c-space> coc#refresh()
+
+
+""Coc Setup :Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-implementation)
-
+nmap <silent> gr <Plug>(coc-references)
 
 set title
 
-
+" Show all diagnostics
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" Find symbol of current document
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>

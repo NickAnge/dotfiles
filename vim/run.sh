@@ -12,7 +12,7 @@ mkdir -p $HOME/.config/nvim/colors
 mkdir -p $HOME/.config/nvim/plugged
 
 backup ".config/nvim/init.vim"
-#backup ".config/nvim/coc-settings.json"
+backup ".config/nvim/coc-settings.json"
 
 ln -s $path/vimrc $HOME/.config/nvim/init.vim
 ln -s $path/coc-settings.json $HOME/.config/nvim/coc-settings.json

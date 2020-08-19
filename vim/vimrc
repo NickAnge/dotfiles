@@ -24,12 +24,15 @@ set number
 "" Tab 4 spaces
 set tabstop=4
 
+""undo 1000 times
+set undolevels=1000
 
 ""Give more space for dispalying messages
 set cmdheight=2
 set expandtab
 set shiftwidth=4
 set shiftround
+
 ""always show signcolumns
 
 ""Open NerdTree using shortcut
@@ -51,23 +54,33 @@ set background=dark
 
 let g:airline_theme="wombat"
 
+
+set title
+
 ""Map tab for autocompletion
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
+
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 inoremap <silent><expr> <c-space> coc#refresh()
 
+""Coc Setup
 
-""Coc Setup :Remap keys for gotos
+""let coc do the gd
+let g:go_def_mapping_enabled=0
+""Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
-set title
 
 " Show all diagnostics
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>

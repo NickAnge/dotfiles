@@ -1,26 +1,38 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh 
+
 # Theme
 ZSH_THEME="gianu"
-#ZSH_THEME="robbyrussell"
 
 
 source $ZSH/oh-my-zsh.sh 
 
+#### Aliases
+# nvim
 
-#<<ALiases <<<
 alias vim=nvim
 alias vi=nvim
+
+#kubernetes
+alias k=kubectl
+source <(kubectl completion zsh)
+# Public Ip
+alias get_ip="curl ipinfo.io/ip"
 
 
 #for setting history length and file size
 HISTSIZE=1000
 HISTFILESIZE=2000#plugins
 
+
+# plugins
 plugins=(
   git
-   )
-#<<<Go initialize <<<
+  kubectl
+  docker
+)
+
+# Go
 export GOPATH=$HOME/golib
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export GOPATH=$GOPATH:/home/aggenikos/code 

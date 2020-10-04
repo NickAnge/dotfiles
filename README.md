@@ -4,4 +4,4 @@
 --zsh
 --tmux
 
-Contains configurations files
+Contains personal configurations files

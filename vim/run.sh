@@ -22,12 +22,12 @@ wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -O $HOM
 wget https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim -O $HOME/.config/nvim/autoload/pathogen.vim
 #neovim install
 wget https://github.com/neovim/neovim/releases/download/v0.4.4/nvim.appimage
-mv nvim.appimage nvim
-mv nvim /usr/bin
+#mv nvim.appimage nvim
+#mv nvim /usr/bin
 
 #curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 #echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt update 
 #&& sudo apt install yarn
 
-sudo apt install fd-findt -euo pipefail
+sudo apt install fd-find

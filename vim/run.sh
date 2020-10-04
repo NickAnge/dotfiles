@@ -30,4 +30,4 @@ wget https://github.com/neovim/neovim/releases/download/v0.4.4/nvim.appimage
 sudo apt update 
 #&& sudo apt install yarn
 
-sudo apt install fd-find
+#sudo apt install fd-find

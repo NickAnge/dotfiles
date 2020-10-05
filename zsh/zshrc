@@ -18,7 +18,8 @@ alias k=kubectl
 source <(kubectl completion zsh)
 # Public Ip
 alias get_ip="curl ipinfo.io/ip"
-
+#alias rm-docker
+#alias drma="docker rm `$(docker ps -a -q)`"
 
 #for setting history length and file size
 HISTSIZE=1000

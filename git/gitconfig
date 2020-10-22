@@ -3,7 +3,7 @@
 	name = Nikos Angelopoulos
 	email = angelopoulosn2@gmail.com
 [core]
-		editor = /usr/bin/vim 
+		editor = $HOME/bin/nvim 
 
 [log]
 	decorate = full

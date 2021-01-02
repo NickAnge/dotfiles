@@ -34,7 +34,6 @@ set expandtab
 set shiftwidth=4
 set shiftround
 
-""always show signcolumns
 
 ""Open NerdTree using shortcut
 nnoremap <Leader>f :NERDTreeToggle<Enter>
@@ -73,8 +72,20 @@ endfunction
 
 inoremap <silent><expr> <c-space> coc#refresh()
 
-""Coc Setup
+nmap <F8> <Plug>(ale_fix)
 
+let b:ale_fixers = {
+            \'go': ['gofmt'],
+            \'python': ['autopep8']
+            \}
+let g:ale_linters = {
+      \   'go': ['gopls'],
+      \   'python': ['flake8', 'pylint'],
+      \   'javascript': ['eslint'],
+      \}
+
+
+""Coc Setup
 ""let coc do the gd
 let g:go_def_mapping_enabled=0
 ""Remap keys for gotos

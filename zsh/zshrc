@@ -38,9 +38,9 @@ plugins=(
 )
 
 # Go
-export GOPATH=$HOME/golib
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-export GOPATH=$GOPATH:/home/aggenikos/code 
+export GOPATH=$HOME/code
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin:$GOBIN
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

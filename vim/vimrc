@@ -19,20 +19,38 @@ Plug 'aonemd/kuroi.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
+
+
+
+""congiguration stuff
+set relativenumber
+set hidden
+set smartcase
+set noswapfile
+set incsearch
+set scrolloff=8
+set signcolumn=yes
+
+
+""Change leader to space
+let mapleader=" "
+
 "line numbers
 set number
 
 "" Tab 4 spaces
 set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set copyindent
 
 ""undo 1000 times
 set undolevels=1000
 
 ""Give more space for dispalying messages
 set cmdheight=2
-set expandtab
-set shiftwidth=4
-set shiftround
 
 
 ""Open NerdTree using shortcut
@@ -47,8 +65,6 @@ map <C-p> :Files<CR>
 colorscheme kuroi
 
 ""Indent
-set autoindent
-set copyindent
 
 set background=dark
 
